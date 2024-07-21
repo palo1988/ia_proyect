@@ -1,0 +1,80 @@
+/* chat.component.css */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(
+    100vh - 128px
+  ); /* Ajustar la altura de la ventana menos la altura de la barra de herramientas y otros márgenes */
+  overflow-y: auto;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #cff4fc;
+  color: #055160;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button[mat-raised-button] {
+  min-width: 100px;
+}
+
+.prediction-result {
+  margin-top: 16px;
+  padding: 10px;
+  background-color: #e7f3fe;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+  color: #0d47a1;
+}
+
+.selected-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+div {
+  margin-top: 64px; /* Altura de la barra de herramientas fija */
+}

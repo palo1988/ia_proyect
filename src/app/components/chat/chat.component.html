@@ -1,0 +1,29 @@
+<div>
+    <mat-toolbar color="primary">
+        <span>Chat con Asistente Virtual</span>
+    </mat-toolbar>
+
+    <div class="chat-container">
+        <div *ngFor="let message of messages" [ngClass]="{'user-message': message.user, 'bot-message': !message.user}">
+            <span [innerHTML]="message.text"></span>
+        </div>
+
+        <!-- Mostrar la predicción y la imagen seleccionada -->
+        <div *ngIf="prediction || selectedImage" class="prediction-result">
+            <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen seleccionada" class="selected-image">
+            <p *ngIf="prediction">Resultado de la predicción: {{ prediction }}</p>
+        </div>
+    </div>
+
+    <!-- Input para escribir mensajes -->
+    <div class="input-container">
+        <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Escribe tu mensaje...">
+        <button mat-raised-button color="primary" (click)="sendMessage()">Enviar</button>
+    </div>
+
+    <!-- Botón para seleccionar archivos -->
+    <div class="input-container">
+        <input type="file" (change)="onFileSelected($event)">
+        <button mat-raised-button color="primary" (click)="onUpload()">Enviar Imagen</button>
+    </div>
+</div>
