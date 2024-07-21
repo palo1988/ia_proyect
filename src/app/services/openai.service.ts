@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class OpenAIService {
   // Ajusta el endpoint si es necesario, en base a la documentación específica de OpenAI
-  private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = '';
+  //private apiUrl = 'https://api.openai.com/v1/chat/completions';
+  //private apiKey = '';
 
   constructor(private http: HttpClient) {}
 
